@@ -1,2 +1,5 @@
-http://alpine-mirror.dnephin.net/alpine/edge/main
+http://dl-4.alpinelinux.org/alpine/edge/main
+http://dl-4.alpinelinux.org/alpine/edge/testing
+http://dl-4.alpinelinux.org/alpine/edge/community
 @custom /repo/main
+@testing /repo/testing
