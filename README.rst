@@ -63,3 +63,24 @@ Testing the Package
 
     make test
     apk add <package>@custom
+
+
+Install Fast
+------------
+
+We have created packages antlr, antlr4, srcml, srcslice, respectively for the
+alpinelinux packages by following the above steps. 
+The source of these packages can be found in the corresponding branches in the
+[aports repository](https://github.com/yijunyu/aports).
+
+Suppose you have already got an account at docker.io, e.g., `yijun`,
+then run the following commands, which will first create a local
+docker image `fast:yijun`, then upload it into the docker.io hub.
+
+.. code:: sh
+
+    make fast
+
+    docker login -u yijun docker.io
+    docker tag fast:yijun yijun/fast
+    docker push yijun/fast
