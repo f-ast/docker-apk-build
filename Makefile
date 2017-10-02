@@ -7,7 +7,8 @@ builder:
 target:
 	mkdir -p fast/target
 aports:
-	git clone git://dev.alpinelinux.org/aports
+	git clone https://github.com/yijunyu/aports
+	cd aports && git checkout fast
 
 .PHONY: aports_update
 aports_update: aports
