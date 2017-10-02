@@ -19,13 +19,13 @@ fast/user.abuild:
 	mkdir -p fast/user.abuild
 
 build: builder target aports
-	docker run -ti \
+	docker run -w /work/testing/fast -ti \
 		-v ${PWD}/fast/user.abuild/:/home/packager/.abuild \
 		-v ${PWD}/aports:/work \
 		-v ${PWD}/fast/target:/target \
 		-v ${HOME}/.gitconfig/:/home/packager/.gitconfig \
 		apk_builder:${BUILD_ID} \
-		sh
+		sh ./p
 
 .PHONY: tester
 tester:
@@ -42,5 +42,5 @@ faster:
 	docker build -t fast:${BUILD_ID} fast/
 
 fast: faster target
-	docker run -ti \
-		fast:${BUILD_ID}
+	docker tag fast:yijun yijun/fast
+	docker push yijun/fast
