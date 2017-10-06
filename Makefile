@@ -1,4 +1,4 @@
-BUILD_ID ?= ${USER}
+BUILD_ID=yijun
 
 .PHONY: builder
 builder:
