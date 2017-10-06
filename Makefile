@@ -43,3 +43,4 @@ faster:
 
 fast: faster target
 	docker tag fast:yijun yijun/fast
+	docker push yijun/fast
