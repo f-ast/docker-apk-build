@@ -44,3 +44,13 @@ faster:
 fast: faster target
 	docker tag fast:yijun yijun/fast
 	docker push yijun/fast
+
+tf: fast
+	docker build -t tensorflow:${BUILD_ID} tensorflow
+	docker run -ti \
+		-v ${PWD}/fast/target:/repo \
+		-v ${PWD}/fast/user.abuild/:/home/abuild/ \
+		--privileged \
+		tensorflow:${BUILD_ID}
+
+
