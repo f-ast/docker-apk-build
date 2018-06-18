@@ -42,7 +42,8 @@ faster:
 	docker build -t fast:${BUILD_ID} fast/
 
 fast: faster target
-	docker tag fast:yijun yijun/fast
+	docker build -t fast:exe exe/
+	docker tag fast:exe yijun/fast
 	docker push yijun/fast
 
 tf: fast
@@ -52,5 +53,3 @@ tf: fast
 		-v ${PWD}/fast/user.abuild/:/home/abuild/ \
 		--privileged \
 		tensorflow:${BUILD_ID}
-
-
