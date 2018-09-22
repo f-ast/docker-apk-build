@@ -42,4 +42,4 @@ faster:
 	docker build -t fast:${BUILD_ID} fast/
 
 fast: faster target
-	docker tag fast:yijun yijun/fast
+	docker tag fast:${BUILD_ID} yijun/fast
