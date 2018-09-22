@@ -53,3 +53,4 @@ tf: fast
 		-v ${PWD}/fast/user.abuild/:/home/abuild/ \
 		--privileged \
 		tensorflow:${BUILD_ID}
+	docker tag fast:${BUILD_ID} yijun/fast
