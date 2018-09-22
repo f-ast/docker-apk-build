@@ -1,9 +1,10 @@
 FROM    alpine:3.8
-ADD     repositories /etc/apk/repositories
+#ADD     repositories /etc/apk/repositories
 RUN     apk update 
-RUN     apk -U add alpine-sdk
-RUN     apk -U add cmake libarchive-dev libxml2-dev libxslt-dev curl-dev boost-dev libantlr3c-dev 
 RUN     apk -U add protobuf protobuf-dev
+RUN     apk -U add alpine-sdk
+RUN     apk -U add cmake libarchive-dev libxml2-dev libxslt-dev curl-dev boost-dev 
+#libantlr3c-dev 
 #openssl-dev
 RUN     apk -U add openjdk8
 RUN     mkdir -p /var/cache/distfiles && \
