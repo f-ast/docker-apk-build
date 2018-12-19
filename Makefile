@@ -25,6 +25,7 @@ build: builder target aports
 		-v ${PWD}/aports:/work \
 		-v ${PWD}/fast/target:/target \
 		-v ${HOME}/.gitconfig/:/home/packager/.gitconfig \
+		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git \
 		apk_builder:${BUILD_ID} \
 		sh ./p
 
