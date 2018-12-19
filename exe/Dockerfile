@@ -1,5 +1,4 @@
-FROM fast:yijun
-RUN apk update 
-RUN apk add -U --allow-untrusted jq perl protobuf bash git python3 py3-pip
+from fast:yijun
+RUN apk add --update --no-cache --allow-untrusted fast@testing
 WORKDIR /e
 ENTRYPOINT ["/usr/bin/fast"]

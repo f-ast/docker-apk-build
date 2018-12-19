@@ -6,6 +6,7 @@ builder:
 
 target:
 	mkdir -p fast/target
+
 aports:
 	git clone https://github.com/yijunyu/aports
 	cd aports && git checkout fast
@@ -38,12 +39,14 @@ test: tester target
 		--privileged \
 		apk_testing:${BUILD_ID}
 
-faster:
+faster: target
 	docker build -t fast:${BUILD_ID} fast/
 
-fast: faster target
+fast: faster
 	docker build -t fast:exe exe/
 	docker tag fast:exe yijun/fast
+
+upload: fast
 	docker push yijun/fast
 
 tf: fast
