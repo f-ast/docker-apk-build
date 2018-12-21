@@ -9,4 +9,10 @@ RUN apk add perl jq parallel bash git\
     	    make gcc g++ gdb \
 	    libgit2-dev libxml2-dev sqlite-dev python3-dev libxml2-dev libxslt-dev
 RUN apk add --allow-untrusted srcml@testing srcSlice@testing protobuf@testing flatbuffers@testing antlr4@testing
-RUN pip3 install protobuf flatbuffers tqdm bs4 urllib3 lxml sklearn tensorboardX torch twine scipy numpy pyarrow
+RUN pip3 install --upgrade pip
+RUN pip3 install pyyaml
+RUN apk add -U cmake
+RUN pip3 install git+https://github.com/pytorch/pytorch
+RUN pip3 install protobuf flatbuffers tqdm bs4 urllib3
+#sklearn tensorboardX twine scipy numpy pyarrow 
+#torch lxml 

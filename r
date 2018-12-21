@@ -6,5 +6,5 @@ docker run --rm --security-opt seccomp=unconfined \
                 -v $(pwd)/fast/user.abuild/:/home/packager/.abuild \
                 -v $(pwd)/aports:/work \
                 -v $(pwd)/fast/target:/target \
-		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git \
+		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git:ro \
 		--entrypoint bash yijun/fast 

@@ -20,12 +20,12 @@ fast/user.abuild:
 	mkdir -p fast/user.abuild
 
 build: builder target aports
-	docker run -w /work/testing/fast -ti \
+	docker run --rm -w /work/testing/fast -ti \
 		-v ${PWD}/fast/user.abuild/:/home/packager/.abuild \
 		-v ${PWD}/aports:/work \
 		-v ${PWD}/fast/target:/target \
 		-v ${HOME}/.gitconfig/:/home/packager/.gitconfig \
-		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git \
+		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git:ro \
 		apk_builder:${BUILD_ID} \
 		sh ./p
 
@@ -34,7 +34,7 @@ tester:
 	docker build -t apk_testing:${BUILD_ID} testing/
 
 test: tester target
-	docker run -ti \
+	docker run --rm -ti \
 		-v ${PWD}/fast/target:/repo \
 		-v ${PWD}/fast/user.abuild/:/home/abuild/ \
 		--privileged \
@@ -52,7 +52,7 @@ upload: fast
 
 tf: fast
 	docker build -t tensorflow:${BUILD_ID} tensorflow
-	docker run -ti \
+	docker run --rm -ti \
 		-v ${PWD}/fast/target:/repo \
 		-v ${PWD}/fast/user.abuild/:/home/abuild/ \
 		--privileged \
