@@ -1,5 +1,5 @@
 from fast:yijun
-RUN pip3 install flatast ggnn
 RUN apk add --update --no-cache --allow-untrusted fast@testing
+RUN pip3 install flatast ggnn
 WORKDIR /e
 ENTRYPOINT ["/usr/bin/fast"]

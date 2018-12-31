@@ -43,6 +43,9 @@ test: tester target
 faster: target
 	docker build -t fast:${BUILD_ID} fast/
 
+fast2: target
+	docker build -t fast-pytorch:${BUILD_ID} fast-pytorch/
+
 fast: faster
 	docker build -t fast:exe exe/
 	docker tag fast:exe yijun/fast
