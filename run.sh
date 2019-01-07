@@ -1,3 +1,3 @@
 make build
-make fast
+#make fast
 make upload
