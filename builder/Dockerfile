@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.8
 ADD repositories /etc/apk/repositories
 RUN apk update 
 RUN apk -U add alpine-sdk

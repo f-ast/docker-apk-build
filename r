@@ -7,4 +7,4 @@ docker run --rm --security-opt seccomp=unconfined \
 		-v ${PWD}/fast/target:/repo \
                 -v $(pwd)/fast/target:/target \
 		-v ${HOME}/Documents/bitbucket.org/yijunyu/fast/.git:/work/testing/fast/.git:ro \
-		apk_builder:yijun sh
+		yijun/fast:apk_builder sh
