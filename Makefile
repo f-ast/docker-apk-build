@@ -33,5 +33,13 @@ faster: target
 fast: faster
 	docker build -t yijun/fast exe/
 
+theia: faster
+	docker build -t yijun/theia theia/
+	docker push yijun/theia
+
+gitpod: faster
+	docker build -t yijun/gitpod:fast gitpod/
+	docker push yijun/gitpod:fast
+
 upload: fast
 	docker push yijun/fast
