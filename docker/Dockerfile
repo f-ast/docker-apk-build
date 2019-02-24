@@ -6,6 +6,7 @@ RUN chmod g+rw /home && \
     mkdir -p /workspace && \
     chown -R gitpod:gitpod /workspace;
 RUN mkdir -p /root && touch /root/dontBreakMyBuild
+RUN apk add -U --no-cache bash git
 ENV HOME=/home/gitpod
 ENV GITPOD_HOME /home/gitpod
 ENV GITPOD_UID_GID 33333
