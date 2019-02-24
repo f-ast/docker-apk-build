@@ -45,5 +45,9 @@ gitpod: faster
 	docker build -t yijun/gitpod:fast gitpod/
 	docker push yijun/gitpod:fast
 
+docker: faster
+	docker build -t yijun/gitpod:docker docker/
+	docker push yijun/gitpod:docker
+
 upload: fast
 	docker push yijun/fast
