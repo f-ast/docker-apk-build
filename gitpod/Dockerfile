@@ -1,4 +1,11 @@
 FROM yijun/fast:base
+RUN apk update
+RUN apk upgrade
+RUN apk add --update go gcc g++
+WORKDIR /usr/bin
+ENV GOPATH /usr/bin
+ENV CGO_ENABLED=1
+ENV GOOS=linux
 RUN addgroup -g 33333 gitpod && \
     adduser -G gitpod -u 33333 -s /bin/bash -D gitpod
 RUN chmod g+rw /home && \
