@@ -3,3 +3,11 @@ user.abuild/
 target/
 aports/
 fast/target/testing/x86_64/APKINDEX.tar.gz
+DuplicateVirtualMethods.smali.pb.txt
+DuplicateVirtualMethods.txt
+DuplicateVirtualMethods.smali.pb.txt.xml
+Hello.slice
+compat.txt
+example.slice
+t
+t.html

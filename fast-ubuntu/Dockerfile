@@ -21,7 +21,6 @@ RUN for a in musl-1.1.21-r0.apk \
   libattr-2.4.47-r7.apk \
   ; do wget http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/$a  && tar xvf /home/gitpod/$a -C /; done \
  && rm -f /home/gitpod/*.apk
-COPY target/testing/x86_64/*.apk  /home/gitpod/
 RUN for a in \
  antlr4-4.7.2-r0.apk \
  antlr4-dev-4.7.2-r0.apk \
@@ -34,10 +33,9 @@ RUN for a in \
  srcSlice-dev-1.0-r0.apk \
  srcml-0.9.5-r0.apk \
  srcml-dev-0.9.5-r0.apk \
- ; do tar xvf /home/gitpod/$a -C /; done \
- && rm -f /home/gitpod/*.apk
+ ; do wget https://github.com/f-ast/docker-apk-build/blob/fast_docker/fast/target/testing/x86_64/$a?raw=true && tar xvf /home/gitpod/$a\?raw\=true -C /; done \
+ && rm -f /home/gitpod/*.apk\?raw\=true
 #RUN apt-get update
 #RUN apt-get install parallel jq
 #RUN pip3 install protobuf flatbuffers tqdm bs4 urllib3
 #RUN pip3 install sklearn tensorboardX scipy numpy torch lxml tensorflow
-USER gitpod
