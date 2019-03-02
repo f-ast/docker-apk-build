@@ -23,8 +23,6 @@ RUN chmod g+rw /home && \
 RUN apk add --no-cache git openssh bash
 ENV HOME /home/theia
 WORKDIR /home/theia
-#COPY --from=0 --chown=theia:theia /home/theia /home/theia
-#COPY /home/theia /home/theia
 RUN chown -R theia:theia /home/theia
 EXPOSE 3000
 ENV SHELL /bin/bash

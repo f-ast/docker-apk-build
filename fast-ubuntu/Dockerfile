@@ -35,7 +35,3 @@ RUN for a in \
  srcml-dev-0.9.5-r0.apk \
  ; do wget https://github.com/f-ast/docker-apk-build/blob/fast_docker/fast/target/testing/x86_64/$a?raw=true && tar xvf /home/gitpod/$a\?raw\=true -C /; done \
  && rm -f /home/gitpod/*.apk\?raw\=true
-#RUN apt-get update
-#RUN apt-get install parallel jq
-#RUN pip3 install protobuf flatbuffers tqdm bs4 urllib3
-#RUN pip3 install sklearn tensorboardX scipy numpy torch lxml tensorflow

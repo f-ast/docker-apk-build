@@ -38,6 +38,7 @@ theia2: faster
 	docker push yijun/theia
 
 theia: faster
+	cp fast/target/testing/* fast-ubuntu/
 	docker build -t yijun/theia fast-ubuntu/
 #	docker push yijun/theia
 
