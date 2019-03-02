@@ -38,9 +38,8 @@ theia2: faster
 	docker push yijun/theia
 
 theia: faster
-	cp fast/target/testing/* fast-ubuntu/
+	git push
 	docker build -t yijun/theia fast-ubuntu/
-#	docker push yijun/theia
 
 gitpod: faster
 	docker build -t yijun/gitpod:fast gitpod/
