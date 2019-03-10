@@ -9,3 +9,7 @@ RUN apk add --allow-untrusted srcml@testing srcSlice@testing protobuf@testing fl
 RUN pip3 install protobuf flatbuffers tqdm bs4 urllib3
 #sklearn tensorboardX scipy numpy
 #torch lxml 
+RUN apk add -U --cache maven
+RUN git clone https://github.com/sjbutler/intt
+RUN cd intt && mvn -Dmaven.javadoc.skip=true install 
+RUN cd .. && rm -rf intt && cp $HOME/.m2/repository/uk/org/facetus/intt/0.8.8-SNAPSHOT/intt-0.8.8-SNAPSHOT.jar /usr/lib/intt.jar
