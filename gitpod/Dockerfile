@@ -17,6 +17,7 @@ RUN apk add --update --no-cache --allow-untrusted fast@testing
 RUN pip3 install ggnn
 RUN pip3 uninstall -y flatast
 RUN pip3 install flatast
+RUN pip3 install tensorflow
 ENV HOME=/home/gitpod
 ENV GITPOD_HOME /home/gitpod
 ENV GITPOD_UID_GID 33333

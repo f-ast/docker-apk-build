@@ -51,3 +51,6 @@ docker: faster
 
 upload: fast
 	docker push yijun/fast
+
+fast-%: %/Dockerfile
+	docker build -t yijun/fast:$* $*/
